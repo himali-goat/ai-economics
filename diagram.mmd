@@ -1,0 +1,41 @@
+graph TD
+    %% Layer 1: Demand & Capital
+    subgraph Layer_1 [Hyperscale Demand Layer]
+        HS[MSFT, GOOGL, AMZN, META]
+    end
+    %% Layer 2: The Physical Shell
+    subgraph Layer_2 [Physical Infrastructure & MEP]
+        EME[EME: Electrical/Mechanical]
+        FIX[FIX: HVAC/Liquid Cooling]
+        VRT[VRT: Thermal Management]
+        PWR[PWR: Grid & Power Distribution]
+    end
+    %% Layer 3: The Rack & Storage
+    subgraph Layer_3 [Compute Fabric & Storage]
+        CLS[CLS: System Assembly/Racks]
+        STX[STX: Mass Data Storage]
+    end
+    %% Layer 4: Connectivity
+    subgraph Layer_4 [Network & Interconnect]
+        MRVL[MRVL: Optical Interconnects]
+        TMUS[TMUS: Edge AI & Connectivity]
+    end
+    %% Layer 5: The Silicon Core
+    subgraph Layer_5 [Semiconductor & Fabrication]
+        NVDA_AMD[NVDA & AMD: GPU/Compute]
+        MU[MU: HBM & Memory]
+        TSM[TSM: Foundry Services]
+        LRCX[LRCX: Fab Equipment]
+    end
+    %% Flow of Goods and Value
+    HS -->|Capital Expenditure| EME & FIX & VRT & PWR
+    EME & FIX & VRT -->|Facility Readiness| CLS
+    PWR -->|Grid Power| EME
+    CLS -->|Deployment| HS
+    STX -->|Storage Capacity| CLS
+    MRVL -->|Data Movement| CLS
+    TMUS -->|Edge Inference| HS
+    NVDA_AMD -->|Compute Engine| CLS
+    MU -->|Memory Feed| NVDA_AMD
+    TSM -->|Fabrication| NVDA_AMD & MRVL & MU
+    LRCX -->|Atomic-Scale Tools| TSM
