@@ -39,7 +39,7 @@ The shift from InfiniBand (NVDA-owned) to Ethernet-based AI networking (Ultra Et
 
 ---
 
-## MBA framework: Porter's Five Forces (Layer 5 — Silicon)
+## Porter's Five Forces (Layer 5 — Silicon)
 
 | Force | Assessment |
 |-------|-----------|
